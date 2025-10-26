@@ -25,9 +25,10 @@
 
   <!-- ===== HERO SECTION ===== -->
   <section class="hero" id="hero">
-    <video autoplay muted loop playsinline class="hero-bg">
-      <source src="assets/bg-video.mp4" type="video/mp4" />
-    </video>
+    <video class="hero-bg" autoplay muted loop playsinline preload="none">
+        <source src="https://res.cloudinary.com/demvgv2em/video/upload/v1761477548/bg-video_r3k605.mp4" type="video/mp4" loading="lazy"/>
+      </video>
+      
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
@@ -59,7 +60,10 @@
 
     <div class="film-card" id="filmCard">
       <img src="https://img.youtube.com/vi/c70oFsvDDyM/maxresdefault.jpg" class="film-poster" alt="Film Poster">
-      <video class="film-trailer" src="assets/trailer.mp4" muted></video>
+      <video class="film-trailer" muted loop preload="metadata">
+        <source src="https://res.cloudinary.com/demvgv2em/video/upload/v1761477637/trailer_xjlhtg.mp4" type="video/mp4" />
+      </video>
+      
       <div class="reflection"></div>
     </div>
 
