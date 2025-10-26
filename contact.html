@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Harsha Relangi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background: #0a0a0a;
+      color: #fff;
+      font-family: "Poppins", sans-serif;
+      overflow-x: hidden;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 0 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #00ff99;
+      margin-bottom: 15px;
+      text-shadow: 0 0 20px rgba(0, 255, 153, 0.4);
+    }
+
+    p {
+      color: #aaa;
+      max-width: 600px;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      max-width: 480px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 30px rgba(0, 255, 153, 0.2);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1.5px solid rgba(0, 255, 153, 0.4);
+      background: #111;
+      color: #fff;
+      font-size: 1rem;
+      border-radius: 8px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #00ff99;
+      box-shadow: 0 0 10px rgba(0, 255, 153, 0.3);
+    }
+
+    button {
+      background: #00ff99;
+      border: none;
+      color: #0a0a0a;
+      padding: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: #00e089;
+      box-shadow: 0 0 20px rgba(0, 255, 153, 0.4);
+      transform: scale(1.05);
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 30px;
+      left: 40px;
+      background: transparent;
+      color: #00ff99;
+      font-weight: 600;
+      border: 2px solid #00ff99;
+      border-radius: 8px;
+      padding: 8px 14px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: #00ff99;
+      color: #000;
+      box-shadow: 0 0 15px rgba(0, 255, 153, 0.5);
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      padding: 25px 0;
+      font-size: 0.9rem;
+    }
+
+    .back-btn {
+  position: fixed; /* instead of absolute */
+  z-index: 9999;   /* ensures it's always on top */
+}
+
+
+  </style>
+</head>
+
+<body>
+  <a href="index.html" class="back-btn">← Back to Portfolio</a>
+
+  <section class="contact-container">
+    <h1>Let’s Connect ✨</h1>
+    <p>Whether you’re looking to collaborate on a film, design a poster, or just say hi — drop a message below and I’ll get back to you soon!</p>
+
+    <form id="contact-form">
+      <input type="text" id="name" name="name" placeholder="Your Name" required />
+      <input type="email" id="email" name="email" placeholder="Your Email" required />
+      <textarea id="message" name="message" rows="5" placeholder="Your Message..." required></textarea>
+      <button type="submit">Send Message 🚀</button>
+    </form>
+  </section>
+
+  <footer>© 2025 Harsha Relangi | Designed with ❤️</footer>
+
+  <!-- Optional EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    emailjs.init("YOUR_EMAILJS_PUBLIC_KEY"); // replace with your EmailJS key
+
+    const form = document.getElementById("contact-form");
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+        .then(() => {
+          alert("Message sent successfully! 🎉");
+          form.reset();
+        }, (error) => {
+          alert("Failed to send message ❌", error);
+        });
+    });
+  </script>
+</body>
+</html>
